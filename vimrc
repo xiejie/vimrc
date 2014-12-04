@@ -24,7 +24,8 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'mattn/emmet-vim'
 Bundle 'honza/vim-snippets'
 Bundle 'Raimondi/delimitMate'
-Bundle 'nathanaelkane/vim-indent-guides'
+" Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'Yggdroot/indentLine'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'Shougo/neocomplete.vim'
 Bundle 'SirVer/ultisnips'
@@ -40,6 +41,7 @@ Bundle 'taglist.vim'
 Bundle 'nginx.vim'
 Bundle 'matchit.zip'
 Bundle 'grep.vim'
+Bundle 'tetris.vim'
 " ...
  
 filetype plugin indent on     " required!
@@ -152,6 +154,7 @@ let g:neocomplete#enable_at_startup = 1
 "nmap <Leader>te :cal <SID>Main()<CR>
 
 " NERD_commenter
+let g:NERDSpaceDelims=1
 imap <C-c> <plug>NERDCommenterInsert
 
 "emmet
