@@ -1,123 +1,127 @@
-set nocompatible               " be iMproved
-filetype off                   " required!
- 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
- 
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
- 
-" My Bundles here:
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+if !isdirectory($HOME.'/.vim/bundle/Vundle.vim')
+  if has('win32')
+      call mkdir($HOME.'\.vim\bundle','p')
+      silent !git clone https://github.com/gmarik/Vundle.vim .vim/bundle/Vundle.vim
+  else
+      silent !mkdir -p ~/.vim/bundle
+      silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
+  endif
+endif
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'mattn/calendar-vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'godlygeek/tabular'
+Plugin 'tpope/vim-repeat'
+Plugin 'pangloss/vim-javascript'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'mattn/emmet-vim'
+Plugin 'honza/vim-snippets'
+Plugin 'Raimondi/delimitMate'
+Plugin 'Yggdroot/indentLine'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'Shougo/neocomplete.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'sjl/gundo.vim'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'nono/jquery.vim'
+Plugin 'tyru/open-browser.vim'
+Plugin 'taglist.vim'
+Plugin 'nginx.vim'
+Plugin 'matchit.zip'
+Plugin 'grep.vim'
+Plugin 'tetris.vim'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 "
-" original repos on github
-Bundle 'mileszs/ack.vim'
-Bundle 'mattn/calendar-vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-surround'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-repeat'
-Bundle 'pangloss/vim-javascript'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'mattn/emmet-vim'
-Bundle 'honza/vim-snippets'
-Bundle 'Raimondi/delimitMate'
-" Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'Yggdroot/indentLine'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'Shougo/neocomplete.vim'
-Bundle 'SirVer/ultisnips'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'sjl/gundo.vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'nono/jquery.vim'
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-" vim-scripts repos
-Bundle 'taglist.vim'
-Bundle 'nginx.vim'
-Bundle 'matchit.zip'
-Bundle 'grep.vim'
-Bundle 'tetris.vim'
-" ...
- 
-filetype plugin indent on     " required!
-"
-" Brief help  
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle command are not allowed..
-
-"gvim字体
-set guifont=Yahei\ Mono\ 13  
-"gvim内部编码
+"" Encoding
 set encoding=utf-8
-"当前编辑的文件编码
 set fileencoding=utf-8
-"gvim打开支持编码的文件
 set fileencodings=ucs-bom,utf-8,gbk,cp936,gb2312,big5,euc-jp,euc-kr,latin1
-"set langmenu=zh_CN
+let &termencoding = &encoding
+set termencoding=utf-8
+
+"" Tabs. May be overriten by autocmd rules
+set tabstop=4
+set softtabstop=0
+set shiftwidth=4
+set expandtab
+
+"" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+"" Directories for swp files
+set nobackup
+set noswapfile
+
+" windos behave
+source $VIMRUNTIME/gvimrc_example.vim
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+"" Gui
+set guifont=Yahei\ Mono:h12:cGB2312
 set langmenu=none
-"let $LANG = 'zh_CN.UTF-8'
-"解决consle输出乱码
-language messages zh_CN.utf-8
-"解决菜单乱码
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-"设置终端编码为gvim内部编码encoding
-let &termencoding=&encoding
-
-"防止特殊符号无法正常显示
-set ambiwidth=double
-"缩进尺寸为4个空格
-set shiftwidth=4
-"tab宽度为4个字符
-set tabstop=4
-"编辑时将所有tab替换为空格
-set expandtab
-"按一次backspace就删除4个空格了
-set smarttab
-"不生成备份文件,如index.html~ 
-set nobackup
-" wrap
-"set nowrap
-"不生成交换文件
-set noswapfile
-"开启行号标记
+language messages en 
+set guioptions=egmlt
+set guitablabel=%M\ %t
 set number
-"命令行屏幕行数
 set cmdheight=1
-"开启自动缩进
-set smartindent
-"高亮显示匹配的括号
 set showmatch             
-"当文件在外部被修改，自动更新该文件
 set autoread                              
-" 高亮显示当前行列
+set ruler
 set cursorline
-"set cursorcolumn
-"用空格键来开关折叠
+set backspace=indent,eol,start
 set foldmethod=marker
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-"map 
-let mapleader = "/"
-"map <F2> <c-w><c-w>
 "set virtualedit=all                                            
 set virtualedit=block                                            
-set guitablabel=%M\ %t
-"motions/disable-arrowkeys.vim
+
+if &term=="win32"
+    set columns=80
+endif
+
+" solarized colorscheme
+let g:solarized_italic=0    
+set t_Co=256
+let g:solarized_termcolors=256    
+set background=dark
+colorscheme solarized
+
+"" Map leader 
+let mapleader='/'
 noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
 map <Tab> >>
+map <Tab> >>
+map <S-Tab> <<
 map <S-Tab> <<
 " eggcache vim
 command W w
@@ -125,12 +129,7 @@ command WQ wq
 command Wq wq
 command Q q
 command Qa qa
-command QA q
-
-
-"javascript
-set regexpengine=1
-"au FileType javascript call JavaScriptFold()
+command QA qa
 
 " php.vim syntax
 let php_show_semicolon_error = 1
@@ -148,10 +147,10 @@ let delimitMate_matchpairs = "(:),[:],{:}"
 au FileType html let b:delimitMate_matchpairs = "(:),[:],{:},<:>"
 
 " NeoComplcache
-let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_at_startup = 0
 
 " tetris.vim
-"nmap <Leader>te :cal <SID>Main()<CR>
+nmap <Leader>te :cal <SID>Main()<CR>
 
 " NERD_commenter
 let g:NERDSpaceDelims=1
@@ -165,20 +164,11 @@ let g:user_emmet_mode='i'
 set laststatus=2
 let g:Powerline_symbols = 'compatible'
 
-" solarized
-set t_Co=256
-let g:solarized_italic=0    "default value is 1
-let g:solarized_termcolors=256    "default value is 16
-syntax enable
-set background=dark
-colorscheme solarized
-
 " Ultisnips
 let g:UltiSnipsUsePythonVersion = 2
 let g:UltiSnipsEditSplit="vertical"
 " vim-snippts
 let g:snips_author='Xiejie <xiejie2104@gmail.com>'
-
 
 "ctags
 set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./*/tags,./*/*/tags,./*/*/*/tags,./*/*/*/tags,./*/*/*/*/tags
@@ -192,10 +182,5 @@ let g:multi_cursor_prev_key='<C-p>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 
-" indet-guides
-let g:indent_guides_guide_size            = 1
-let g:indent_guides_start_level           = 2
-let g:indent_guides_enable_on_vim_startup = 0
-
-" grep
-let Grep_Default_Options = '-i'
+" indentLine
+let g:indentLine_char='┆'
