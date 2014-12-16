@@ -83,11 +83,11 @@ source $VIMRUNTIME/mswin.vim
 behave mswin
 
 "" Gui
-set guifont=Yahei\ Mono:h12:cGB2312
+set guifont=Yahei\ Mono\ 11
 set langmenu=none
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-language messages en 
+" language messages en 
 set guioptions=egmlt
 set guitablabel=%M\ %t
 set number
@@ -184,6 +184,8 @@ let g:multi_cursor_quit_key='<Esc>'
 
 " indentLine
 let g:indentLine_char='┆'
+let g:indentLine_color_term = 239 
+let g:indentLine_fileType = ['c', 'cpp', 'php', 'js', 'sh', 'py']
 
 "     ./configure --with-features=huge --disable-gui --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-cscope --enable-luainterp --enable-perlinterp --enable-tclinterp --enable-multibyte --enable-xim --prefix=/usr
 " make VIMRCLOC=/etc VIMRUNTIMEDIR=/usr/share/vim MAKE="make -e"
