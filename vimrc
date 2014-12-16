@@ -120,9 +120,9 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
 map <Tab> >>
-map <Tab> >>
 map <S-Tab> <<
-map <S-Tab> <<
+vmap <Tab> >>
+vmap <S-Tab> <<
 " eggcache vim
 command W w
 command WQ wq
