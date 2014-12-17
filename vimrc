@@ -78,9 +78,11 @@ set nobackup
 set noswapfile
 
 " windos behave
-source $VIMRUNTIME/gvimrc_example.vim
-source $VIMRUNTIME/mswin.vim
-behave mswin
+if has ('win32')
+    source $VIMRUNTIME/gvimrc_example.vim
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
+endif
 
 "" Gui
 set guifont=Yahei\ Mono\ 11
