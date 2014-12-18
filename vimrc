@@ -36,6 +36,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sjl/gundo.vim'
+Plugin 'vcscommand.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'nono/jquery.vim'
 Plugin 'tyru/open-browser.vim'
@@ -85,11 +86,15 @@ if has ('win32')
 endif
 
 "" Gui
-set guifont=Yahei\ Mono\ 11
+if has ('win32')
+    set guifont=Yahei\ Mono:h12:cGB2312 
+    language messages en
+else
+    set guifont=Yahei\ Mono\ 11
+endif
 set langmenu=none
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
-" language messages en 
 set guioptions=egmlt
 set guitablabel=%M\ %t
 set number
@@ -142,6 +147,7 @@ let g:PHP_default_indenting = 1
 
 "NERDTree
 map <F2> :NERDTreeToggle<CR>
+let NERDTreeChDirMode=2
 
 "delimitMate
 inoremap <c-]> <C-R>=delimitMate#JumpMany()<CR>
@@ -161,6 +167,9 @@ imap <C-c> <plug>NERDCommenterInsert
 "emmet
 let g:user_emmet_expandabbr_key='<C-e>'
 let g:user_emmet_mode='i'
+
+" vcscommand
+let b:VCSCommandVCSType='SVN'
 
 "Powerline
 set laststatus=2
