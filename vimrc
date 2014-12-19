@@ -182,10 +182,12 @@ let g:UltiSnipsEditSplit="vertical"
 let g:snips_author='Xiejie <xiejie2104@gmail.com>'
 
 "ctags
-set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./*/tags,./*/*/tags,./*/*/*/tags,./*/*/*/tags,./*/*/*/*/tags
+" set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./*/tags,./*/*/tags,./*/*/*/tags,./*/*/*/tags,./*/*/*/*/tags
+set tags=/www/tags
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 nnoremap <silent> <F8> :TlistToggle<CR>
+nnoremap <silent> <F3> :!ctags --languages=php -R /www<CR><CR>
 
 "multi-cursor Default mapping  
 let g:multi_cursor_next_key='<C-n>'
