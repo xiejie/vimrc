@@ -126,6 +126,10 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
+map <c-h> <c-w>h
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-l> <c-w>l
 map <Tab> >>
 map <S-Tab> <<
 vmap <Tab> >>
@@ -159,6 +163,9 @@ let g:neocomplete#enable_at_startup = 0
 
 " tetris.vim
 nmap <Leader>te :cal <SID>Main()<CR>
+
+" source vimrc
+map <silent> <Leader>so :source ~/.vimrc<cr>
 
 " NERD_commenter
 let g:NERDSpaceDelims=1
