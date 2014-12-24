@@ -1,15 +1,10 @@
 set nocompatible              " be iMproved, required
-filetype off                  " required
+filetype off                  
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 if !isdirectory($HOME.'/.vim/bundle/Vundle.vim')
-  if has('win32')
-      call mkdir($HOME.'\.vim\bundle','p')
-      silent !git clone https://github.com/gmarik/Vundle.vim .vim/bundle/Vundle.vim
-  else
-      silent !mkdir -p ~/.vim/bundle
-      silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
-  endif
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/gmarik/Vundle.vim ~/.vim/bundle/Vundle.vim
 endif
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -33,7 +28,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'SirVer/ultisnips'
-Plugin 'scrooloose/nerdcommenter'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sjl/gundo.vim'
 Plugin 'vcscommand.vim'
@@ -126,21 +121,21 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<cr>
-map <c-h> <c-w>h
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-l> <c-w>l
+map <C-h> <c-w>h
+map <C-j> <c-w>j
+map <C-k> <c-w>k
+map <C-l> <c-w>l
 map <Tab> >>
 map <S-Tab> <<
 vmap <Tab> >>
 vmap <S-Tab> <<
 " eggcache vim
-command W w
-command WQ wq
-command Wq wq
-command Q q
-command Qa qa
-command QA qa
+command! W w
+command! WQ wq
+command! Wq wq
+command! Q q
+command! Qa qa
+command! QA qa
 
 " php.vim syntax
 let php_show_semicolon_error = 1
@@ -156,7 +151,6 @@ let NERDTreeChDirMode=2
 "delimitMate
 inoremap <c-]> <C-R>=delimitMate#JumpMany()<CR>
 let delimitMate_matchpairs = "(:),[:],{:}"
-au FileType html let b:delimitMate_matchpairs = "(:),[:],{:},<:>"
 
 " NeoComplcache
 let g:neocomplete#enable_at_startup = 0
@@ -167,9 +161,8 @@ nmap <Leader>te :cal <SID>Main()<CR>
 " source vimrc
 map <silent> <Leader>so :source ~/.vimrc<cr>
 
-" NERD_commenter
-let g:NERDSpaceDelims=1
-imap <C-c> <plug>NERDCommenterInsert
+" tcomment
+map <Leader>c<space> :TComment<cr>
 
 "emmet
 let g:user_emmet_expandabbr_key='<C-e>'
@@ -189,7 +182,6 @@ let g:UltiSnipsEditSplit="vertical"
 let g:snips_author='Xiejie <xiejie2104@gmail.com>'
 
 "ctags
-" set tags=./tags,./../tags,./../../tags,./../../../tags,./../../../../tags,./*/tags,./*/*/tags,./*/*/*/tags,./*/*/*/tags,./*/*/*/*/tags
 set tags=/www/tags
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
