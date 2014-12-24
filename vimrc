@@ -62,6 +62,7 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
+autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2 
 
 "" Searching
 set hlsearch
