@@ -11,6 +11,8 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+Plugin 'Shougo/vimshell.vim'
+Plugin 'Shougo/vimproc.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'mattn/calendar-vim'
 Plugin 'scrooloose/nerdtree'
@@ -34,7 +36,6 @@ Plugin 'sjl/gundo.vim'
 Plugin 'vcscommand.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'nono/jquery.vim'
-Plugin 'tyru/open-browser.vim'
 Plugin 'taglist.vim'
 Plugin 'nginx.vim'
 Plugin 'matchit.zip'
