@@ -11,8 +11,8 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-Plugin 'Shougo/vimshell.vim'
 Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/vimshell.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'mattn/calendar-vim'
 Plugin 'scrooloose/nerdtree'
@@ -22,7 +22,7 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-repeat'
 Plugin 'pangloss/vim-javascript'
-Plugin 'Lokaltog/vim-powerline'
+Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
 Plugin 'honza/vim-snippets'
 Plugin 'Raimondi/delimitMate'
@@ -32,7 +32,8 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Lokaltog/vim-easymotion'
-" Plugin 'sjl/gundo.vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'vcscommand.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'nono/jquery.vim'
@@ -87,7 +88,7 @@ if has ('win32')
     set guifont=Yahei\ Mono:h12:cGB2312 
     language messages en
 else
-    set guifont=Yahei\ Mono\ 11
+    set guifont=Ubuntu\ Mono\ 12
 endif
 set langmenu=none
 source $VIMRUNTIME/delmenu.vim
@@ -104,10 +105,6 @@ set backspace=indent,eol,start
 set foldmethod=marker
 "set virtualedit=all                                            
 set virtualedit=block                                            
-
-if &term=="win32"
-    set columns=80
-endif
 
 " solarized colorscheme
 let g:solarized_italic=0    
@@ -161,7 +158,7 @@ let g:neocomplete#enable_at_startup = 0
 nmap <Leader>te :cal <SID>Main()<CR>
 
 " source vimrc
-map <silent> <Leader>so :source ~/.vimrc<cr>
+map <silent> <Leader>so :source ~/.vim/vimrc<cr>
 
 " tcomment
 map <Leader>c<space> :TComment<cr>
@@ -173,9 +170,19 @@ let g:user_emmet_mode='i'
 " vcscommand
 let b:VCSCommandVCSType='SVN'
 
-"Powerline
+" Install powerline_font
+" https://powerline.readthedocs.org/en/latest/installation/linux.html
+" wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf
+" wget https://github.com/powerline/powerline/raw/develop/font/10-powerline-symbols.conf
+" mv PowerlineSymbols.otf ~/.fonts/
+" mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/ /etc/fonts/conf.d/
+" fc-cache -vf ~/.fonts/
+
+"airline
 set laststatus=2
-let g:Powerline_symbols = 'compatible'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#branch#enabled = 1
+" let g:airline#extensions#branch#use_vcscommand = 1
 
 " Ultisnips
 let g:UltiSnipsUsePythonVersion = 2
