@@ -169,6 +169,7 @@ let g:user_emmet_mode='i'
 
 " vcscommand
 let b:VCSCommandVCSType='SVN'
+let b:VCSCommandMapPrefix='<leader>s'
 
 " Install powerline_font
 " https://powerline.readthedocs.org/en/latest/installation/linux.html
