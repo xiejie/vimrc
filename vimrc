@@ -197,7 +197,7 @@ let Tlist_Exit_OnlyWindow = 1
 let Tlist_Use_Right_Window = 1 
 nnoremap <silent> <F8> :TlistToggle<CR>
 " generate tags for php
-nnoremap <silent> <F3> :!ctags --languages=php --exclude=.metadata --php-kinds=+cidfv -f /www/tags -R /www<CR><CR>
+nnoremap <silent> <F3> :!ctags --languages=php --exclude=.* --php-kinds=+cidfv -f /www/tags -R /www<CR><CR>
 
 "multi-cursor Default mapping  
 let g:multi_cursor_next_key='<C-n>'
