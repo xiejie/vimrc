@@ -30,7 +30,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'SirVer/ultisnips'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sjl/gundo.vim'
 Plugin 'tpope/vim-fugitive'
@@ -147,6 +147,9 @@ let g:PHP_default_indenting = 1
 map <F2> :NERDTreeToggle<CR>
 let NERDTreeChDirMode=2
 
+" NERD_commenter
+let g:NERDSpaceDelims=1
+
 "delimitMate
 inoremap <c-]> <C-R>=delimitMate#JumpMany()<CR>
 let delimitMate_matchpairs = "(:),[:],{:}"
@@ -159,9 +162,6 @@ nmap <Leader>te :cal <SID>Main()<CR>
 
 " source vimrc
 map <silent> <Leader>so :source ~/.vim/vimrc<cr>
-
-" tcomment
-map <Leader>c<space> :TComment<cr>
 
 "emmet
 let g:user_emmet_expandabbr_key='<C-e>'
@@ -195,7 +195,8 @@ set tags=/www/tags
 let Tlist_Show_One_File = 1
 let Tlist_Exit_OnlyWindow = 1
 nnoremap <silent> <F8> :TlistToggle<CR>
-nnoremap <silent> <F3> :!ctags --languages=php -R /www<CR><CR>
+" generate tags for php
+nnoremap <silent> <F3> :!ctags --languages=php --exclude=.metadata --php-kinds=+cidfv -f /www/tags -R /www<CR><CR>
 
 "multi-cursor Default mapping  
 let g:multi_cursor_next_key='<C-n>'
