@@ -206,7 +206,7 @@ let g:multi_cursor_quit_key='<Esc>'
 " indentLine
 let g:indentLine_char='┆'
 let g:indentLine_color_term = 239 
-let g:indentLine_fileType = ['c', 'cpp', 'php', 'js', 'sh', 'py']
+let g:indentLine_fileType = ['c', 'cpp', 'php', 'js', 'py']
 
 "     ./configure --with-features=huge --disable-gui --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-cscope --enable-luainterp --enable-perlinterp --enable-tclinterp --enable-multibyte --enable-xim --prefix=/usr
 " make VIMRCLOC=/etc VIMRUNTIMEDIR=/usr/share/vim MAKE="make -e"
