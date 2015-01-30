@@ -88,7 +88,7 @@ if has ('win32')
     set guifont=Yahei\ Mono:h12:cGB2312 
     language messages en
 else
-    set guifont=Ubuntu\ Mono\ 12
+    set guifont=Ubuntu\ Mono\ derivative\ Powerline\ 13
 endif
 set langmenu=none
 source $VIMRUNTIME/delmenu.vim
@@ -182,7 +182,7 @@ let b:VCSCommandVCSType='SVN'
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
-" let g:airline#extensions#branch#use_vcscommand = 1
+let g:airline#extensions#branch#use_vcscommand = 0
 
 " Ultisnips
 let g:UltiSnipsUsePythonVersion = 2
