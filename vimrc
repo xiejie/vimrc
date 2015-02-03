@@ -64,7 +64,7 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
-autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set noexpandtab tabstop=2 shiftwidth=2 
+autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set expandtab tabstop=2 shiftwidth=2 
 
 "" Searching
 set hlsearch
@@ -83,7 +83,7 @@ if has ('win32')
     behave mswin
 endif
 
-"" Gui
+"" Gui Font
 if has ('win32')
     set guifont=Yahei\ Mono:h12:cGB2312 
     language messages en
@@ -94,6 +94,7 @@ set langmenu=none
 source $VIMRUNTIME/delmenu.vim
 source $VIMRUNTIME/menu.vim
 set guioptions=egmlt
+set mousemodel=popup_setpos
 set guitablabel=%M\ %t
 set number
 set cmdheight=1
@@ -140,7 +141,7 @@ command! QA qa
 let php_show_semicolon_error = 1
 let php_sql_query = 1
 " php.vim indenting
-let g:PHP_default_indenting = 1    
+let g:PHP_default_indenting = 0
 "let g:PHP_autoformatcomment = 0
 
 "NERDTree
@@ -155,7 +156,11 @@ inoremap <c-]> <C-R>=delimitMate#JumpMany()<CR>
 let delimitMate_matchpairs = "(:),[:],{:}"
 
 " NeoComplcache
-let g:neocomplete#enable_at_startup = 0
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " tetris.vim
 nmap <Leader>te :cal <SID>Main()<CR>
@@ -183,6 +188,7 @@ let b:VCSCommandMapPrefix='<leader>s'
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#branch#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
 let g:airline#extensions#branch#use_vcscommand = 0
 
 " Ultisnips
