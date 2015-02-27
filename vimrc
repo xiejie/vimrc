@@ -20,6 +20,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-repeat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'bling/vim-airline'
@@ -150,6 +151,9 @@ let NERDTreeChDirMode=2
 
 " NERD_commenter
 let g:NERDSpaceDelims=1
+
+" markdown
+let g:vim_markdown_folding_disabled=1
 
 "delimitMate
 inoremap <c-]> <C-R>=delimitMate#JumpMany()<CR>
