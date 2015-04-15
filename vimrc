@@ -66,7 +66,7 @@ set tabstop=4
 set softtabstop=0
 set shiftwidth=4
 set expandtab
-autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set expandtab tabstop=2 shiftwidth=2 
+" autocmd BufNewFile,BufRead *.html,*.htm,*.css,*.js set expandtab tabstop=2 shiftwidth=2 
 
 "" Searching
 set hlsearch
@@ -155,6 +155,7 @@ let g:NERDSpaceDelims=1
 
 " markdown
 let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_frontmatter=1
 
 "delimitMate
 inoremap <c-]> <C-R>=delimitMate#JumpMany()<CR>
