@@ -35,6 +35,7 @@ Plugin 'SirVer/ultisnips'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'sjl/gundo.vim'
+Plugin 'joonty/vdebug'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vcscommand.vim'
 Plugin 'kien/rainbow_parentheses.vim'
@@ -222,6 +223,27 @@ let g:multi_cursor_quit_key='<Esc>'
 let g:indentLine_char='┆'
 let g:indentLine_color_term = 239 
 let g:indentLine_fileType = ['c', 'cpp', 'php', 'js', 'py']
+
+" vdebug
+" let g:vdebug_options['port'] = 9000
+" let g:vdebug_options["timeout"] = 3
+" let g:vdebug_options["ide_key"] = 1
+    let g:vdebug_options= {
+    \    "port" : 9000,
+    \    "server" : 'localhost',
+    \    "timeout" : 20,
+    \    "on_close" : 'detach',
+    \    "break_on_open" : 1,
+    \    "ide_key" : '1',
+    \    "path_maps" : {},
+    \    "debug_window_level" : 0,
+    \    "debug_file_level" : 0,
+    \    "debug_file" : "",
+    \    "watch_window_style" : 'expanded',
+    \    "marker_default" : '⬦',
+    \    "marker_closed_tree" : '▸',
+    \    "marker_open_tree" : '▾'
+    \}
 
 "     ./configure --with-features=huge --disable-gui --enable-rubyinterp --enable-pythoninterp --enable-perlinterp --enable-cscope --enable-luainterp --enable-perlinterp --enable-tclinterp --enable-multibyte --enable-xim --prefix=/usr
 " make VIMRCLOC=/etc VIMRUNTIMEDIR=/usr/share/vim MAKE="make -e"
