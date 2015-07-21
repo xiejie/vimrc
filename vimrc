@@ -20,8 +20,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'godlygeek/tabular'
+Plugin 'Stormherz/tablify'
 Plugin 'plasticboy/vim-markdown'
-Plugin 'evidens/vim-twig'
+" Plugin 'evidens/vim-twig'
 Plugin 'tpope/vim-repeat'
 Plugin 'pangloss/vim-javascript'
 Plugin 'bling/vim-airline'
@@ -226,7 +227,7 @@ let g:indentLine_fileType = ['c', 'cpp', 'php', 'js', 'py']
 
 " vdebug
 let g:vdebug_options= {
-            \    "port" : 9000,
+            \    "port" : 9001,
             \    "server" : 'localhost',
             \    "timeout" : 20,
             \    "on_close" : 'detach',
@@ -236,7 +237,7 @@ let g:vdebug_options= {
             \    "debug_window_level" : 0,
             \    "debug_file_level" : 0,
             \    "debug_file" : "",
-            \    "watch_window_style" : 'expanded',
+            \    "watch_window_style" : 'compact',
             \    "marker_default" : '⬦',
             \    "marker_closed_tree" : '▸',
             \    "marker_open_tree" : '▾'
